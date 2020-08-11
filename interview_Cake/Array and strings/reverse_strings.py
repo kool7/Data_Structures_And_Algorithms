@@ -8,4 +8,3 @@ while True:
     data.append(char)
 
 print(data[::-1])
-

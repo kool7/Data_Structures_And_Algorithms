@@ -1,16 +1,20 @@
+def find(s, ch):
+    return [i + 1 for i, ltr in enumerate(s) if ltr == ch]
+
 T = int(input())
 for i in range(T):
-    I = 0
-    M = 0
     N, K = map(int, input().split())
-
     S = input()
+    if len(S) == N:
+        I = find(S, "I")
+        M = find(S, "M")
+        X = find(S, "X")
+        Sh = find(S, ":")
 
-    for s in range(len(S)):
-        # I = S.find('I')
-        # M = S.find('M')
-        S[s]
-        print(I)
-        print(M)
-        break
-        
+        # P = K + 1 - I - M - Sh
+        # print(P)
+
+    print(I)
+    print(M)
+    print(X)
+    print(Sh)

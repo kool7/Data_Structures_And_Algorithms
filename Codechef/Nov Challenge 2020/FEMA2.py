@@ -1,20 +1,33 @@
-def find(s, ch):
-    return [i + 1 for i, ltr in enumerate(s) if ltr == ch]
+# def find(s, ch):
+#     return [i + 1 for i, ltr in enumerate(s) if ltr == ch]
+
 
 T = int(input())
 for i in range(T):
     N, K = map(int, input().split())
     S = input()
+    F = []
+    ANS = 0
     if len(S) == N:
-        I = find(S, "I")
-        M = find(S, "M")
-        X = find(S, "X")
-        Sh = find(S, ":")
+        for i in range(N):
+            if S[i] == 'M':
+                F.append(i)
+                continue
+            elif S[i] == 'I':
+                F.append(i)
+                continue
+                P = K + 1 - F[1] - F[0]
+                if P > 0:
+                    ANS += 1
 
-        # P = K + 1 - I - M - Sh
-        # print(P)
+            elif S[i] == ':':
+                F.append(i)
+                continue
+            elif S[i] == 'X':
+                F.append(i)
+                break
 
-    print(I)
-    print(M)
-    print(X)
-    print(Sh)
+            # P = K + 1 - F[0] - F[1] - F[3]
+
+        print(F)
+        print(ANS)

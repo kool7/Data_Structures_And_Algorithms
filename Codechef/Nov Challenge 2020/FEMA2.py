@@ -27,8 +27,8 @@ for i in range(T):
                         IRON += 1
                         SHEET = 0
 
-                    else:
-                        if IRON < MAGNET:
+                    if P <= 0:
+                        if MAGNET > IRON:
                             IRON += 1
                         else:
                             MAGNET += 1
@@ -47,7 +47,7 @@ for i in range(T):
                         IRON += 1
                         SHEET = 0
 
-                    else:
+                    if P <= 0:
                         if MAGNET < IRON:
                             MAGNET += 1
                         else:

@@ -15,10 +15,10 @@ for i in range(T):
             if IRON == S.find('I', IRON):
 
                 if MAGNET > IRON:
-                    for i in range(IRON, MAGNET + 1):
-                        if i == S.find(':', i):
-                            SHEET += 1
-                    
+                    # for i in range(IRON, MAGNET):
+                    #     if i == S.find(':', i):
+                    #         SHEET += 1
+                    SHEET += any(i == S.find(':', i) for i in range(IRON, MAGNET))
                     P = K + 1 - abs(IRON - MAGNET) - SHEET
         
                     if P > 0:
@@ -35,10 +35,10 @@ for i in range(T):
                         
                 elif MAGNET < IRON:
 
-                    for i in range(MAGNET, IRON + 1):
-                        if i == S.find(':', i):
-                            SHEET += 1
-                    
+                    # for i in range(MAGNET, IRON):
+                    #     if i == S.find(':', i):
+                    #         SHEET += 1
+                    SHEET += any(i == S.find(':', i) for i in range(IRON, MAGNET))
                     P = K + 1 - abs(IRON - MAGNET) - SHEET
                     
                     if P > 0:

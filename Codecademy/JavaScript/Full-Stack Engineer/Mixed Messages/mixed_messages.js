@@ -1,5 +1,5 @@
 // random message
-let message = Math.floor(Math.random() * 3)
+const message = Math.floor(Math.random() * 3)
 
 switch(message){
     case 1:
